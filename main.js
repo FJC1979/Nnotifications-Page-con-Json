@@ -6,6 +6,24 @@ const respuesta = async (url) => {
 	const resp = await fetch(url);
 	const data = await resp.json();
 	data.forEach((element) => {
+		const div = d.createElement("div");
+		div.classList.add("tarjetitas");
+		div.innerHTML = `
+		 <p>${element.name}</p>
+		 <p>${element.cell}</p>
+		 <p>${element.adress}</p>
+		 <img src="${element.photo}" class="foto"></img>
+		 `;
+
+		$fragment.appendChild(div);
+	});
+	d.getElementById("tarjetas").appendChild($fragment);
+};
+/* 
+const respuesta = async (url) => {
+	const resp = await fetch(url);
+	const data = await resp.json();
+	data.forEach((element) => {
 		console.log(element.name);
 		let $name = d.createElement("p");
 		$name.textContent = element.name;
@@ -25,7 +43,7 @@ const respuesta = async (url) => {
 		$fragment.appendChild(div);
 	});
 	d.getElementById("tarjetas").appendChild($fragment);
-};
+}; */
 respuesta("/datas.json");
 /* )
 fetch("/datas.json").then((Response) =>
