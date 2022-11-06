@@ -1,9 +1,83 @@
 /** @format */
 
-html {
-	box-sizing: border-box;
+:root {
+	--fondos: #ffaa22;
 }
+
 * {
+	box-sizing: border-box;
 	margin: 0px;
 	padding: 0px;
+}
+body {
+	background-color: var(--fondos);
+}
+/* contenedor */
+.contacto {
+	border: 2px solid white;
+	background-color: brown;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	width: 600px;
+	min-height: 600px;
+	margin: 50px auto;
+	overflow: hidden;
+}
+.contactos_nav {
+	/* NAV bar */
+	width: 80%;
+	border-radius: 30px;
+	margin: 5px auto;
+	text-align: center;
+	background-image: linear-gradient(to bottom, grey, white, grey);
+	margin-bottom: 5px;
+}
+/* TARJETAS  */
+/* CONTENEDOR TARJETS */
+.tarjetas {
+	width: 500px;
+	min-height: 600px;
+	border: 1px solid #0fa;
+	background-color: #0101fa;
+	margin: 0px auto 10px;
+	padding-top: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+/* TARJETAS CADA UNA */
+.d {
+	background-color: blue;
+	width: 220px;
+	height: 69px;
+	display: grid;
+	grid-template-columns: 50px 140px;
+	grid-template-rows: auto;
+	justify-content: space-around;
+	align-content: center;
+	margin: auto 5px;
+	border-radius: 5px;
+	border: 1px solid #0af;
+}
+.foto {
+	grid-row: 1/4;
+	width: 50px;
+	height: 50px;
+	border-radius: 30px;
+}
+.d p {
+	width: 200px;
+	text-decoration: underline;
+}
+@media screen and (max-width: 600px) {
+	.contacto {
+		width: 350px;
+		min-height: 1000px;
+	}
+	.tarjetas {
+		width: 300px;
+		height: 1000px;
+	}
 }
